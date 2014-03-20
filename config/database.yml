@@ -1,0 +1,21 @@
+common: &common
+  adapter: postgresql
+  username: ryan
+  encoding: unicode
+  pool: 5
+  password: password
+
+development:
+  <<: *common
+  database: user_test_development
+
+test:
+  <<: *common
+  database: user_test_test
+
+production:production:
+  adapter: postgresql
+  username: XXXXXXXXX
+  password: XXXXXXX
+  host: XXXXXXXX
+  database: XXXXXXX
