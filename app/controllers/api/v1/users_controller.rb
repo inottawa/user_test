@@ -16,8 +16,12 @@ module Api
 
       def update
         @user = current_user
-        @user.update_attributes(params[:user])
+        @user.update_attributes(user_params)
         respond_with @user
+      end
+
+      def user_params
+        params.require(:user).permit(:name, :email, :twitter, :postalcode)
       end
       
     end
